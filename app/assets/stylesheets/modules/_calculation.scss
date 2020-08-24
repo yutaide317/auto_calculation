@@ -1,0 +1,97 @@
+*{
+  box-sizing: border-box;
+}
+.wrapper {
+  background-image: url("b119.jpg");
+}
+.Title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+  padding-top: 40px;
+  &__form {
+    width: 250px;
+    height: 40px;
+    text-align: center;
+  }
+}
+.upbar {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+}
+.Input_main {
+  height: 250px;
+  background-color:#E3E3E3;
+  
+  border:1px #999 solid;
+  &__column {
+    &--name {
+      text-align: center;
+    }
+    &--num {
+      width: 60px;
+      height: 30px;
+      text-align: end;
+    }
+  }
+}
+table th {
+  border:1px #999 solid;
+  font-weight: bold;
+}
+table td {
+  border:1px #999 solid;
+  height: 50px;
+}
+.Form {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 50px;
+}
+.note {
+  height: 100vh;
+  &__content{
+    position:relative;
+    background:#fffde7;
+    height: 300px;
+    width:40%;
+    margin:2em auto;
+    padding:1.5em 1em;
+    transform: rotate(-2deg);
+    box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+    color:#795548;
+  }
+  &__content::before{
+    content:'ここがポイント';
+    position:relative;
+    display:inline-block;
+    border-bottom:3px solid #795548;
+    border-radius: 0 0 40% 5% / 0 0 15% 20%;
+    padding:0 1em 0.1em 0.2em;
+    font-size:110%;
+    font-weight:bold;
+    transform: rotate(-5deg);
+  }
+  &__content::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:-15px;
+    margin-left:-75px;
+    width:150px;
+    height:30px;
+    background:rgba(245,245,245,0.7);
+    box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+    transform: rotate(-4deg);
+  }
+  &__content ol{
+    margin:1em 0.5em 0 2em;
+    padding:0 0 0 0;
+  }
+  &__content ol li{
+    margin-bottom:0.5em;
+  }
+}
