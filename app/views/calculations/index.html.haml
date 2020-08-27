@@ -1,63 +1,63 @@
 .wrapper
-  .Title 
-    %input.Title__form{type:"text",placeholder:"タイトルを入力してください"}
-  .upbar
-    %table.Input_main
-      %tr.Input_main__colmun
-        %th.Input_main__column--name
-          商品
-        %th.Input_main__column--name
-          単価
-        %th.Input_main__column--name
-          個数
-        %th.Input_main__column--name
-          小計
-        %th.Input_main__column--name
-          合計
-      %tr.Input_main__colmun
-        %td
-          %input.Input_main__column--name{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-      %tr.Input_main__colmun
-        %td
-          %input.Input_main__column--name{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-      %tr.Input_main__colmun
-        %td
-          %input.Input_main__column--name{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-      %tr.Input_main__colmun
-        %td
-          %input.Input_main__column--name{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"}
-        %td
-          %input.Input_main__column--num{type:"text"} 
-  .Form
-    %input.Form__botton{type:"submit", value:"保存する"}   
+  = form_with model: @calculation, local: true do |f|
+    .Title 
+      = f.text_field :title, class:"Title__form" ,placeholder:"タイトルを入力してください"
+    .upbar
+      %table.Input_main
+        %tr.Input_main__colmun
+          %th.Input_main__column--name
+            商品
+          %th.Input_main__column--name
+            単価
+          %th.Input_main__column--name
+            個数
+          %th.Input_main__column--name
+            小計
+          %th.Input_main__column--name
+            合計
+        %tr.Input_main__colmun
+          %td
+            = f.text_field :product1, class:"Input_main__column--name"
+          %td
+            = f.text_field :unit_price1, class:"Input_main__column--num"
+          %td
+            = f.text_field :number1, class:"Input_main__column--num"
+          %td
+            = f.text_field :sub_total1, class:"Input_main__column--num"
+        %tr.Input_main__colmun
+          %td
+            = f.text_field :product2, class:"Input_main__column--name"
+          %td
+            = f.text_field :unit_price2, class:"Input_main__column--num"
+          %td
+            = f.text_field :number2, class:"Input_main__column--num"
+          %td
+            = f.text_field :sub_total2, class:"Input_main__column--num"
+        %tr.Input_main__colmun
+          %td
+            = f.text_field :product3, class:"Input_main__column--name"
+          %td
+            = f.text_field :unit_price3, class:"Input_main__column--num"
+          %td
+            = f.text_field :number3, class:"Input_main__column--num"
+          %td
+            = f.text_field :sub_total3, class:"Input_main__column--num"
+        %tr.Input_main__colmun
+          %td
+            = f.text_field :product4, class:"Input_main__column--name"
+          %td
+            = f.text_field :unit_price4, class:"Input_main__column--num"
+          %td
+            = f.text_field :number4, class:"Input_main__column--num"
+          %td
+            = f.text_field :sub_total4, class:"Input_main__column--num"
+          %td
+            = f.text_field :total, class:"Input_main__column--num"
+    .Form
+      = f.submit "保存する", class:"Form__botton"   
 
-      
-
-  .note
-    .note__content
-      %ol.list 
-        %li.list_box おはよう
+    .note
+    - @calculations.each do |calc|
+      .note__content
+        %ol
+          = render @calculations
