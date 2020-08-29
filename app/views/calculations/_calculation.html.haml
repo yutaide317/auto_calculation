@@ -1,10 +1,14 @@
-  %li  
-    = calc.title
-  %li
-    = calc.product1
-  %li
-    = calc.unit_price1
-  %li
-    = calc.number1
-  %li
-    = calc.sub_total1
+.note__content
+  %ol
+    %li  
+      = calculation.title
+    %li
+      = calculation.product1
+    %li
+      = calculation.unit_price1
+    %li
+      = calculation.number1
+    %li
+      = calculation.sub_total1  
+    %li
+      = link_to '削除', calculation_path(calculation.id), method: :delete

@@ -1,8 +1,11 @@
 *{
   box-sizing: border-box;
+  
 }
 .wrapper {
   background-image: url("b119.jpg");
+  overflow: scroll;
+  height: auto;
 }
 .Title {
   display: flex;

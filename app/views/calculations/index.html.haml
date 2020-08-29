@@ -21,43 +21,40 @@
           %td
             = f.text_field :unit_price1, class:"Input_main__column--num"
           %td
-            = f.text_field :number1, class:"Input_main__column--num"
+            = f.text_field :number1, class:"Input_main__column--score"
           %td
-            = f.text_field :sub_total1, class:"Input_main__column--num"
+            = f.text_field :sub_total1, class:"Input_main__column--sub"
         %tr.Input_main__colmun
           %td
             = f.text_field :product2, class:"Input_main__column--name"
           %td
             = f.text_field :unit_price2, class:"Input_main__column--num"
           %td
-            = f.text_field :number2, class:"Input_main__column--num"
+            = f.text_field :number2, class:"Input_main__column--score"
           %td
-            = f.text_field :sub_total2, class:"Input_main__column--num"
+            = f.text_field :sub_total2, class:"Input_main__column--sub"
         %tr.Input_main__colmun
           %td
             = f.text_field :product3, class:"Input_main__column--name"
           %td
             = f.text_field :unit_price3, class:"Input_main__column--num"
           %td
-            = f.text_field :number3, class:"Input_main__column--num"
+            = f.text_field :number3, class:"Input_main__column--score"
           %td
-            = f.text_field :sub_total3, class:"Input_main__column--num"
+            = f.text_field :sub_total3, class:"Input_main__column--sub"
         %tr.Input_main__colmun
           %td
             = f.text_field :product4, class:"Input_main__column--name"
           %td
             = f.text_field :unit_price4, class:"Input_main__column--num"
           %td
-            = f.text_field :number4, class:"Input_main__column--num"
+            = f.text_field :number4, class:"Input_main__column--score"
           %td
-            = f.text_field :sub_total4, class:"Input_main__column--num"
+            = f.text_field :sub_total4, class:"Input_main__column--sub"
           %td
-            = f.text_field :total, class:"Input_main__column--num"
+            = f.text_field :total, class:"Input_main__column--total"
     .Form
       = f.submit "保存する", class:"Form__botton"   
 
     .note
-    - @calculations.each do |calc|
-      .note__content
-        %ol
-          = render @calculations
+      = render @calculations
