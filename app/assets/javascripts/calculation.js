@@ -1,16 +1,26 @@
-$(function() {
-  let total = $(".Input_main__column--total")
-  $("#calculation_unit_price1").on('change', function(e) {
+$(function(){
+  $("#form").on('change', function(e) {
     e.preventDefault();
-    let str = $(this).val();
-    let num = Number(str.replace(/[^0-9]/g, ''));
-    $(this).val(num);
-    if(num != 0) {
-      let price = num ;
-      total.val(price);
-    }
-    
+  var TOTAL;
+  TOTAL=0;//合計リセット
+
+  $(".Input_main__colmun").each(function() {
+
+      var per = $(this).find('.Input_main__column--num').val();    //単価入力値取得
+      var num = $(this).find('.Input_main__column--number').val();    //数量入力値取得
+      var subtotal = per*num;                    //小計算出
+      var SUBTOTAL = Math.round( subtotal );    //小計整数化
+
+      $(this).find('.Input_main__column--sub').val(SUBTOTAL);    //小計表示
+
+      if(!num || !per){                        //未入力の場合小計空欄
+          $(this).find(".Input_main__column--sub").val('');
+      };
+      if(SUBTOTAL){
+          TOTAL = parseInt(SUBTOTAL)+TOTAL;        //合計額加算
+          $(".Input_main__column--total").val(TOTAL);        //合計表示
+      }
+    });
   });
 });
-
 

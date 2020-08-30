@@ -1,14 +1,65 @@
 .note__content
-  %ol
-    %li  
-      = calculation.title
+  .note__content--title
+    = calculation.title
+  .note__content--memo
+  %ol     
     %li
       = calculation.product1
     %li
       = calculation.unit_price1
+      円
     %li
       = calculation.number1
+      個
     %li
       = calculation.sub_total1  
+      円
+    
+  .note__content--memo
+  %ol     
+    %li
+      = calculation.product2
+    %li
+      = calculation.unit_price2 
+      円
+    %li
+      = calculation.number2
+      個
+    %li
+      = calculation.sub_total2
+      円
+  .note__content--memo
+  %ol     
+    %li
+      = calculation.product3
+    %li
+      = calculation.unit_price3
+      円
+    %li
+      = calculation.number3
+      個
+    %li
+      = calculation.sub_total3
+      円
+  .note__content--memo
+  %ol     
+    %li
+      = calculation.product4
+    %li
+      = calculation.unit_price4
+      円
+    %li
+      = calculation.number4
+      個
+    %li
+      = calculation.sub_total4
+      円
+  .note__content--memo
+  %ol
+    %li   
+      合計
+      = calculation.total
+      円
     %li
       = link_to '削除', calculation_path(calculation.id), method: :delete
+  

@@ -1,5 +1,5 @@
 .wrapper
-  = form_with model: @calculation, local: true do |f|
+  = form_with model: @calculation, id:"form", local: true do |f|
     .Title 
       = f.text_field :title, class:"Title__form" ,placeholder:"タイトルを入力してください"
     .upbar
@@ -21,7 +21,7 @@
           %td
             = f.text_field :unit_price1, class:"Input_main__column--num"
           %td
-            = f.text_field :number1, class:"Input_main__column--score"
+            = f.text_field :number1, class:"Input_main__column--number"
           %td
             = f.text_field :sub_total1, class:"Input_main__column--sub"
         %tr.Input_main__colmun
@@ -30,7 +30,7 @@
           %td
             = f.text_field :unit_price2, class:"Input_main__column--num"
           %td
-            = f.text_field :number2, class:"Input_main__column--score"
+            = f.text_field :number2, class:"Input_main__column--number"
           %td
             = f.text_field :sub_total2, class:"Input_main__column--sub"
         %tr.Input_main__colmun
@@ -39,7 +39,7 @@
           %td
             = f.text_field :unit_price3, class:"Input_main__column--num"
           %td
-            = f.text_field :number3, class:"Input_main__column--score"
+            = f.text_field :number3, class:"Input_main__column--number"
           %td
             = f.text_field :sub_total3, class:"Input_main__column--sub"
         %tr.Input_main__colmun
@@ -48,7 +48,7 @@
           %td
             = f.text_field :unit_price4, class:"Input_main__column--num"
           %td
-            = f.text_field :number4, class:"Input_main__column--score"
+            = f.text_field :number4, class:"Input_main__column--number"
           %td
             = f.text_field :sub_total4, class:"Input_main__column--sub"
           %td
